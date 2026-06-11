@@ -171,11 +171,6 @@ export default function App() {
           <ConsolidatedBrandHeader size={32} isDarkBg={true} padding="py-1 px-3" />
         </div>
 
-        {/* Floating background decorative indicators */}
-        <div className="absolute bottom-8 left-8 text-slate-400 text-[11px] font-mono select-none hidden md:block">
-          <span>PORT: 3000 // SYSTEM_SECURE_SSL // RECONFIGURED FOR AJANTA PHARMA</span>
-        </div>
-
         {/* Login White Card Container */}
         <motion.div 
           initial={{ opacity: 0, y: 35, scale: 0.98 }}
