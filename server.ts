@@ -53,7 +53,7 @@ To calculate **Scope 1 (Direct) Emissions** for your facilities:
 3. **Apply Emission Factors**: Use regional factors like US EPA or Defra.
    $$\\text{Emissions (kg CO2e)} = \\text{Fuel Consumed} \\times \\text{Emission Factor}$$
 
-*SmartEase Tip: Use our "Facilities" tab to click on any site and input physical consumption. The system automatically computes tCO2e using live GHG Protocol coefficients!*`;
+*CREDIBL Tip: Use our "Facilities" tab to click on any site and input physical consumption. The system automatically computes tCO2e using live GHG Protocol coefficients!*`;
         } else if (responseLower.includes("brsr") || responseLower.includes("align") || responseLower.includes("report") || responseLower.includes("framework")) {
           fallbackText = `### BRSR Alignment & Reporting Guidelines
 
@@ -62,7 +62,7 @@ The **Business Responsibility and Sustainability Report (BRSR)** is mandated for
 - **Section B**: Management and Process Disclosures (policies on human rights, environment, ethics).
 - **Section C**: Principle-wise Performance Disclosures (Essential vs. Leadership indicators).
 
-**To optimize your BRSR alignment in SmartEase:**
+**To optimize your BRSR alignment in CREDIBL:**
 - Keep your Scope 1 and Scope 2 metrics verified month-by-month in the **ESG Performance** section.
 - Compile worker training percentages and safety incidence rates in our **Assessment/VCP** questionnaire.
 - Download the aggregated CSRD/BRSR-compliant CSV from our **Reports** tab.`;
@@ -78,7 +78,7 @@ Water consumption risks are tracked in detail under our **Facilities** section:
         } else {
           fallbackText = `### Ask Eva - Sustainted Corporate ESG Insights
 
-Hello! I am **Eva**, your SmartEase sustainability companion. Here are some key metrics and frameworks you can track and learn more about:
+Hello! I am **Eva**, your CREDIBL sustainability companion. Here are some key metrics and frameworks you can track and learn more about:
 
 1. **Carbon Footprint Monitoring**
    - Track fuel consumption (Scope 1) and purchased electricity (Scope 2).
@@ -97,9 +97,9 @@ Hello! I am **Eva**, your SmartEase sustainability companion. Here are some key 
         return res.json({ text: fallbackText });
       }
 
-      const systemInstruction = `You are "Eva", SmartEase's advanced AI sustainability consultant. 
+      const systemInstruction = `You are "Eva", CREDIBL's advanced AI sustainability consultant. 
 You provide expert advice on ESG performance, corporate carbon accounting, CSRD/SEC rules, BRSR (Business Responsibility and Sustainability Reporting) standards, and practical green initiatives. 
-Keep answers structured, professional, and clear. Format key metrics and lists in beautiful, scannable Markdown. Use tables and bullet points where helpful. Mention specific SmartEase modules such as the "Facilities Dashboard" or "Goals Tracker" where appropriate.`;
+Keep answers structured, professional, and clear. Format key metrics and lists in beautiful, scannable Markdown. Use tables and bullet points where helpful. Mention specific CREDIBL modules such as the "Facilities Dashboard" or "Goals Tracker" where appropriate.`;
 
       let textResponse = "";
       if (history && Array.isArray(history) && history.length > 0) {

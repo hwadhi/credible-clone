@@ -56,7 +56,6 @@ import AnalyticsTab from './components/AnalyticsTab';
 import ESGTab from './components/ESGTab';
 import DocumentsTab from './components/DocumentsTab';
 import ValueChainPartnersTab from './components/ValueChainPartnersTab';
-import { SmartEaseIcon, SmartEaseLogo, PhronesisIcon, PhronesisLogo, ConsolidatedBrandHeader } from './components/Logos';
 
 export default function App() {
   // App-wide Centralized Reactive State
@@ -78,7 +77,7 @@ export default function App() {
 
   // Lifted Profile / Personal Info State
   const [personalInfo, setPersonalInfo] = useState(() => {
-    const cached = localStorage.getItem('smartease_user_personal_profile');
+    const cached = localStorage.getItem('credibl_user_personal_profile');
     if (cached) {
       try {
         return JSON.parse(cached);
@@ -166,9 +165,18 @@ export default function App() {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-950/85 to-slate-900/40 z-0"></div>
 
-        {/* SmartEase & Phronesis Floating Brand Logo top left */}
-        <div className="absolute top-8 left-8 select-none z-15">
-          <ConsolidatedBrandHeader size={32} isDarkBg={true} padding="py-1 px-3" />
+        {/* credibl Floating Brand Logo top left */}
+        <div className="absolute top-8 left-8 flex items-center gap-2 select-none z-15">
+          <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 50,10 A 40,40 0 0 0 50,90 A 30,30 0 0 1 50,10" fill="#ffffff" />
+            <path d="M 50,22 A 28,28 0 0 1 50,78 A 18,18 0 0 0 50,22" fill="#2563eb" />
+          </svg>
+          <span className="font-sans font-black text-white text-xl tracking-tight">credibl</span>
+        </div>
+
+        {/* Floating background decorative indicators */}
+        <div className="absolute bottom-8 left-8 text-slate-400 text-[11px] font-mono select-none hidden md:block">
+          <span>PORT: 3000 // SYSTEM_SECURE_SSL // RECONFIGURED FOR AJANTA PHARMA</span>
         </div>
 
         {/* Login White Card Container */}
@@ -184,7 +192,7 @@ export default function App() {
               Sign in to your account
             </h2>
             <p className="text-xs text-slate-400 mt-1.5 leading-snug">
-              Secure governance portal managed by SmartEase ESG Engine (by Phronesis)
+              Secure governance portal managed by CREDIBL ESG engine
             </p>
           </div>
 
@@ -287,18 +295,11 @@ export default function App() {
             )}
           </form>
 
-          <div className="text-center mt-6 pt-4 border-t border-slate-100 flex flex-col gap-3">
-            <div>
-              <span className="text-xs text-slate-400">New User? </span>
-              <a href="#" onClick={(e) => e.preventDefault()} className="text-xs font-bold text-blue-650 hover:underline">
-                Signup
-              </a>
-            </div>
-            
-            <div className="flex items-center justify-center gap-1.5 pt-2 border-t border-slate-50 select-none">
-              <span className="text-[10px] font-bold text-slate-400 font-sans tracking-wide uppercase">Solution by</span>
-              <PhronesisLogo size={16} />
-            </div>
+          <div className="text-center mt-6 pt-4 border-t border-slate-100">
+            <span className="text-xs text-slate-400">New User? </span>
+            <a href="#" onClick={(e) => e.preventDefault()} className="text-xs font-bold text-blue-650 hover:underline">
+              Signup
+            </a>
           </div>
         </motion.div>
       </div>
@@ -311,7 +312,7 @@ export default function App() {
       {/* ─── GLOBAL PRO TOPBAR ────────────────────────────────── */}
       <header className="h-14 bg-white border-b border-slate-200 sticky top-0 z-40 px-4 flex items-center justify-between shadow-xs select-none">
         
-        {/* Left Side Branding Split - SmartEase & Ajanta Pharma */}
+        {/* Left Side Branding Split - credibl & Ajanta Pharma */}
         <div className="flex items-center gap-3">
           {/* Mobile hamburger controls */}
           <button 
@@ -322,12 +323,16 @@ export default function App() {
             <Menu size={18} />
           </button>
 
-          {/* SmartEase & Phronesis Brand Row */}
+          {/* credibl Brand Logo */}
           <div 
             onClick={() => setActiveTab('dashboard')} 
-            className="flex items-center cursor-pointer select-none overflow-visible animate-fade-in"
+            className="flex items-center gap-1.5 cursor-pointer"
           >
-            <ConsolidatedBrandHeader size={26} isDarkBg={false} padding="py-0.5 px-2" />
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none" className="shrink-0">
+              <path d="M 50,10 A 40,40 0 0 0 50,90 A 30,30 0 0 1 50,10" fill="#09090b" />
+              <path d="M 50,22 A 28,28 0 0 1 50,78 A 18,18 0 0 0 50,22" fill="#2563eb" />
+            </svg>
+            <span className="font-sans font-extrabold text-slate-900 text-[18px] tracking-tight">credibl</span>
           </div>
 
           {/* Separator line */}
@@ -481,7 +486,9 @@ export default function App() {
                 <div className="p-4 space-y-4">
                   {/* Brand close */}
                   <div className="flex justify-between items-center">
-                    <ConsolidatedBrandHeader size={20} isDarkBg={false} padding="py-0.5 px-1.5" />
+                    <span className="font-sans font-extrabold text-slate-800 tracking-tight text-sm uppercase">
+                      CREDIBL ESG
+                    </span>
                     <button 
                       onClick={() => setMobileMenuOpen(false)}
                       className="text-slate-400 hover:text-slate-650"

@@ -369,7 +369,7 @@ export default function AnalyticsTab() {
               
               <div className="border-t border-slate-100 pt-3 mt-4 text-[11px] text-slate-400 flex items-center gap-1.5 select-none">
                 <Info size={12} className="text-blue-500" />
-                <span>Computed natively under SmartEase Carbon Logic Engine</span>
+                <span>Computed natively under CREDIBL Carbon Logic Engine</span>
               </div>
             </div>
 

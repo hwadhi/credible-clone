@@ -48,7 +48,7 @@ export default function ReportsTab({}: ReportsTabProps) {
       let frameworkLabel = '';
 
       if (activeFramework === 'BRSR') {
-        docName = `SmartEase_BRSR_SecC_Performance_Compliance_${Date.now().toString().substring(8)}.pdf`;
+        docName = `CREDIBL_BRSR_SecC_Performance_Compliance_${Date.now().toString().substring(8)}.pdf`;
         frameworkLabel = 'SEBI BRSR Standards';
       } else if (activeFramework === 'CSRD') {
         docName = `CSRD_Double_Materiality_Metric_Export_${Date.now().toString().substring(8)}.pdf`;

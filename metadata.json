@@ -1,5 +1,5 @@
 {
-  "name": "SmartEase ESG Dashboard",
+  "name": "CREDIBL ESG Dashboard",
   "description": "Interactive ESG carbon footprint dashboard, emissions tracker, goals planner, and compliant BRSR questionnaire, backed by a server-side Gemini conversational partner named Eva.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
