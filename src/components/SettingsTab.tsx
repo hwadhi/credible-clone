@@ -135,7 +135,7 @@ export default function SettingsTab({
     });
 
     // Check localStorage fallback
-    const cachedUsers = localStorage.getItem('credibl_governed_users');
+    const cachedUsers = localStorage.getItem('smartease_governed_users');
     if (cachedUsers) {
       try {
         setUsers(JSON.parse(cachedUsers));
@@ -144,7 +144,7 @@ export default function SettingsTab({
       }
     } else {
       setUsers(generatedUsers);
-      localStorage.setItem('credibl_governed_users', JSON.stringify(generatedUsers));
+      localStorage.setItem('smartease_governed_users', JSON.stringify(generatedUsers));
     }
 
     // Try loading from Firebase if configured
@@ -178,7 +178,7 @@ export default function SettingsTab({
   // Sync users to LocalStorage whenever they change
   useEffect(() => {
     if (users.length > 0) {
-      localStorage.setItem('credibl_governed_users', JSON.stringify(users));
+      localStorage.setItem('smartease_governed_users', JSON.stringify(users));
     }
   }, [users]);
 
@@ -193,7 +193,7 @@ export default function SettingsTab({
   // Handle personal profile details update
   const handleUpdateMyProfile = (e: React.FormEvent) => {
     e.preventDefault();
-    localStorage.setItem('credibl_user_personal_profile', JSON.stringify(personalInfo));
+    localStorage.setItem('smartease_user_personal_profile', JSON.stringify(personalInfo));
     alert('Personal information & authentication safeguards saved successfully.');
   };
 
@@ -554,7 +554,7 @@ export default function SettingsTab({
                   type="button"
                   onClick={() => {
                     if (confirm("Executing factory clean resets is immediate and irreversible. Clear user lists and restore data packages?")) {
-                      localStorage.removeItem('credibl_governed_users');
+                      localStorage.removeItem('smartease_governed_users');
                       onResetData();
                       window.location.reload();
                     }

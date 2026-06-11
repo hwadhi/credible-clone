@@ -172,7 +172,7 @@ export default function BenchmarkingTab({ facilities }: BenchmarkingTabProps) {
           <span>Industry Standing Diagnostics Brief</span>
         </h3>
         <p className="text-xs leading-relaxed max-w-4xl text-slate-650">
-          Your current energy intensity metrics of <strong>{demoEnergyIntensity.toFixed(1)} kWh/sqft</strong> rank in the <strong>top 40%</strong> of similar size tech-office/logistics portfolios on CREDIBL ESG. This performance is primarily driven by efficient rooftop solar offsets installed at your Berlin and Tokyo sites.
+          Your current energy intensity metrics of <strong>{demoEnergyIntensity.toFixed(1)} kWh/sqft</strong> rank in the <strong>top 40%</strong> of similar size tech-office/logistics portfolios on SmartEase ESG. This performance is primarily driven by efficient rooftop solar offsets installed at your Berlin and Tokyo sites.
         </p>
         <p className="text-xs leading-relaxed max-w-4xl text-slate-650">
           To optimize carbon foot intensity down from <strong>{demoCarbonIntensity.toFixed(1)} kg/sqft</strong> toward your target threshold of <strong>3.1 kg/sqft</strong>, consider auditing natural gas heating operations at the Chicago Factory assembling line, or purchasing high-volume Renewable Energy Certificates (RECs).

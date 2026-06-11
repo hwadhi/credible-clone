@@ -77,7 +77,7 @@ I am **Eva**, your interactive consultant powered by Google Gemini. I am trained
           console.warn("Firestore message fetch error, using local state instead: ", err);
         }
       } else {
-        const cached = localStorage.getItem('credibl_ask_eva_logs_v2');
+        const cached = localStorage.getItem('smartease_ask_eva_logs_v2');
         if (cached) {
           try {
             setMessages(JSON.parse(cached));
@@ -91,7 +91,7 @@ I am **Eva**, your interactive consultant powered by Google Gemini. I am trained
   // Save to LocalStorage fallback whenever messages update
   useEffect(() => {
     if (messages.length > 1) {
-      localStorage.setItem('credibl_ask_eva_logs_v2', JSON.stringify(messages));
+      localStorage.setItem('smartease_ask_eva_logs_v2', JSON.stringify(messages));
     }
   }, [messages]);
 
@@ -113,7 +113,7 @@ I am **Eva**, your interactive consultant powered by Google Gemini. I am trained
     if (isFirebaseConfigured && db) {
       try {
         await addDoc(collection(db, 'chat_history'), {
-          userId: 'jamie.taylor@crediblgovern.space',
+          userId: 'jamie.taylor@sustaincorp.com',
           role: 'user',
           content: promptText,
           timestamp: userMessage.timestamp,
@@ -164,7 +164,7 @@ I am **Eva**, your interactive consultant powered by Google Gemini. I am trained
       if (isFirebaseConfigured && db) {
         try {
           await addDoc(collection(db, 'chat_history'), {
-            userId: 'jamie.taylor@crediblgovern.space',
+            userId: 'jamie.taylor@sustaincorp.com',
             role: 'assistant',
             content: answerContent,
             timestamp: assistantMessage.timestamp,
@@ -203,7 +203,7 @@ Please check that your Express full-stack environment has booted properly on por
         }
       ];
       setMessages(defaultState);
-      localStorage.setItem('credibl_ask_eva_logs_v2', JSON.stringify(defaultState));
+      localStorage.setItem('smartease_ask_eva_logs_v2', JSON.stringify(defaultState));
 
       if (isFirebaseConfigured && db) {
         try {
